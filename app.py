@@ -5,9 +5,11 @@ import os
 
 app = Flask(__name__)
 
+# File names for storing PMIDs
 PMID_FILE = "PMIDs_list.txt"
 DEFAULT_PMID_FILE = "PMIDs_default.txt"
 
+# Main page: handles form for user-submitted PMIDs or default use
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -15,6 +17,8 @@ def index():
             selected_file = DEFAULT_PMID_FILE
         else:
             pmids = request.form["pmids"]
+
+            # Save input PMIDs to file
             with open(PMID_FILE, "w") as f:
                 f.write(pmids.strip())
             selected_file = PMID_FILE
@@ -23,13 +27,17 @@ def index():
 
     return render_template("index.html")
 
+# Loading page shown while processing data
 @app.route("/loading")
 def loading():
     pmid_file = request.args.get("pmid_file")
     return render_template("loading.html", pmid_file=pmid_file)
 
+
+# Backend processing route: calls API + model, then returns result
 @app.route("/process/<pmid_file>")
 def process(pmid_file):
+    
     # Write file name to disk so api_call can access it
     api_call_path = os.path.join(".", pmid_file)
 

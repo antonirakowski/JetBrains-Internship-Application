@@ -5,11 +5,17 @@
 </head>
 <body>
     <h2>Enter PMIDs</h2>
+    
+    <!-- Input form for custom or default PMIDs -->
     <form method="POST">
         <textarea name="pmids" rows="5" cols="40" placeholder="Enter one PMID per line, e.g.:
 12345678
 87654321"></textarea><br>
+
+        <!-- Checkbox to use a default file of PMIDs -->
         <label><input type="checkbox" name="use_default"> Use default PMIDs</label><br><br>
+
+        <!-- Submission button -->
         <button type="submit">Submit and Process</button>
     </form>
 </body>

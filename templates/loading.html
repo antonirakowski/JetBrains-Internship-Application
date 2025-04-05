@@ -2,9 +2,13 @@
 <html>
 <head>
     <title>Loading...</title>
+    
+    <!-- Automatically redirect after 2 seconds -->
     <meta http-equiv="refresh" content="2; url={{ url_for('process', pmid_file=pmid_file) }}">
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
+
+        /* Spinner styling */
         .loader {
             border: 12px solid #f3f3f3;
             border-top: 12px solid #3498db;

@@ -4,8 +4,8 @@ import json
 import csv
 from collections import defaultdict
 
+# Fetch GEO dataset IDs linked to given PMIDs using the ELink API.
 def get_geo_ids_from_pmids(pmid_list):
-    """Fetch GEO dataset IDs linked to given PMIDs using the ELink API."""
     pmid_to_geo = defaultdict(list)
     geo_to_pmid = defaultdict(list)
     
@@ -25,8 +25,8 @@ def get_geo_ids_from_pmids(pmid_list):
 
     return pmid_to_geo, geo_to_pmid
 
+# Fetch GEO dataset details for given GEO IDs using the ESummary API.
 def get_geo_dataset_details(geo_ids):
-    """Fetch GEO dataset details for given GEO IDs using the ESummary API."""
     geo_ids_str = ",".join(geo_ids)
     esummary_url = (
         "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?"
@@ -38,12 +38,12 @@ def get_geo_dataset_details(geo_ids):
         return response.json().get("result", {})
     return {}
 
+# Remove commas from text to prevent CSV format issues.
 def sanitize(text):
-    """Remove commas from text to prevent CSV format issues."""
     return text.replace(",", " ") if text else "N/A"
 
+# Write mapping dictionary to CSV.
 def write_mapping_file(mapping, filename, key_header, value_header):
-    """Write mapping dictionary to CSV."""
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([key_header, value_header])
@@ -90,8 +90,6 @@ def main():
         writer = csv.DictWriter(out_f, fieldnames=["GEO ID", "Title", "Experiment type", "Summary", "Organism"])
         writer.writeheader()
         writer.writerows(extracted_data)
-
-    print(f"Data saved to: {csv_file}, GEO_to_PMID.csv")
 
 if __name__ == "__main__":
     main()
