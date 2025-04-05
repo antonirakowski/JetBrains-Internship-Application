@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+    <title>Interactive Cluster Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div>{{ graph_html | safe }}</div>
+    <br>
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
