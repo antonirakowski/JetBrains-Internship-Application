@@ -74,5 +74,4 @@ The specific tools, libraries, and frameworks used throughout the project are li
   - `model.py`.
   - `model_creation.ipynb`.
 
-Thus, **make sure to run the Flask app** (`app.py`) **prior to executing** `model_creation.ipynb`, `model.py`, `api_call.py`, to generate all necessary files before executing the other scripts directly.
-After running the app once, you're free to explore the outputs using the Python scripts or Jupyter notebook.
+Thus, **make sure to run the Flask app** (`app.py`) **prior to executing** `model_creation.ipynb`, `model.py`, `api_call.py`, to generate all necessary files. After running the app once, you're free to explore the Python scripts or Jupyter notebook.
