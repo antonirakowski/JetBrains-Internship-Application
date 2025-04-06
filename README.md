@@ -31,18 +31,48 @@ This project is a web-based application that integrates biomedical data retrieva
 Thus, **make sure to run the Flask app (`app.py`) first** to generate all necessary files before executing the other scripts directly.
 After running the app once, you're free to explore the outputs using the Python scripts or Jupyter notebook.
 
-The specific tools, libraries, and frameworks used throughout the project are listed in the [`requirements.txt`](requirements.txt) file.
-
 ---
 
 ## ⚙️ Setup Instructions
 
-Before running the project for the first time, make sure to download the required NLTK and spaCy resources:
+### 🐍 Python Version
+This project was built and tested with **Python 3.12.2**. Make sure you're using this version (or a compatible one) for best results.
 
-```python
-import nltk
-from spacy.cli import download
+### 📦 Package requirements
 
-nltk.download("stopwords")
-nltk.download("punkt")
-download("en_core_web_sm")
+The specific tools, libraries, and frameworks used throughout the project are listed in the [`requirements.txt`](requirements.txt) file.
+
+### 🔧 Installation Steps 
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/antonirakowski/JetBrains-Internship-Application;
+   cd JetBrains-Internship-Application
+   ```
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run set-up script**
+   ```bash
+   python setup.py
+   ```
+
+   The script includes:
+   ```python
+   import nltk
+   from spacy.cli import download
+
+   nltk.download("stopwords")
+   nltk.download("punkt")
+   nltk.download("punkt_tab")
+   download("en_core_web_sm")
+   ```
+4. **Start the app**
+   ```bash
+   python app.py
+   ```
+5. **Now feel free to explore directly:** <br>
+`model_creation.ipynb` <br>
+`model.py`<br>
+`api_call.py` 

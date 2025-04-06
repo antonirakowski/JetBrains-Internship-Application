@@ -20,11 +20,6 @@ import math
 random.seed(42)
 np.random.seed(42)
 
-# Run this only once!
-# nltk.download("stopwords")
-# nltk.download("punkt")
-# download("en_core_web_sm")
-
 # Function for removing punctuation
 def remove_punctuation(text):
     text = re.sub(r'[^\w\s]', '', text)
