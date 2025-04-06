@@ -54,13 +54,13 @@ for tools that streamline research and data accessibility — especially in inte
 
 11. Experienced in building interactive web applications focused on intuitive and user-friendly data visualization (while I have used Shiny, as opposed to Flask, I’m comfortable picking up frameworks quickly and am eager to explore it if needed).
 
-The above skill set allows me to contribute and be of value
+The above skill set allows me to be of value
 to the project.
 
 ## Alignment
 
 I perceive this internship to be a meaningful opportunity
-to contribute scientific discovery via the development
+to contribute to scientific discovery via the development
 of research-supporting tools.
 
 It aligns perfectly with my academic aspirations, 
