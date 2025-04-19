@@ -6,7 +6,7 @@ import spacy
 from spacy.cli import download
 import re
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
@@ -194,12 +194,12 @@ def main():
     tfidf_matrix = tfidf_vectorizer.fit_transform(df["Connected text"])
     tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
 
-    # Applying MinMaxScaler
-    min_max_scaler = MinMaxScaler()
-    tfidf_df = min_max_scaler.fit_transform(tfidf_df)
+    # Scaling
+    scaler = StandardScaler()
+    tfidf_df = scaler.fit_transform(tfidf_df)
 
     # Applying PCA
-    pca = PCA(n_components= math.ceil(2 * math.log(n))) # Setting the number of components to 2log(n)
+    pca = PCA(n_components= math.ceil(math.log(n))) # Setting the number of components to 2log(n)
     X_train = pca.fit_transform(tfidf_df)
 
     # Training KMeans with optimal (in the sense of Silhouette) number of clusters k

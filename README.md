@@ -1,4 +1,4 @@
-# 🚀 JetBrains Internship Application
+# 🚀 PubMed Clustering
 
 ## 🧩 Project Overview
 
@@ -34,8 +34,8 @@ The specific tools, libraries, and frameworks used throughout the project are li
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/antonirakowski/JetBrains-Internship-Application;
-   cd JetBrains-Internship-Application
+   git clone https://github.com/antonirakowski/PubMed-Clustering
+   cd PubMed-Clustering
    ```
 2. **Install dependencies**
    ```bash
